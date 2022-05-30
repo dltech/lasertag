@@ -128,16 +128,19 @@
 
 /* Enable input debounce filters */
 #define DBFENQDEC       MMIO32(QDEC + 0x528)
-// Enable input debounce filters. DBFEN
+// Enable input debounce filters.
+#define DBFEN   0x1
 
 /* Time period the LED is switched ON prior to sampling */
 #define LEDPREQDEC      MMIO32(QDEC + 0x540)
+// Period in us the LED is switched on prior to sampling. LEDPRE [0..511]
 
 /* Register accumulating the number of detected double transitions */
 #define ACCDBLQDEC      MMIO32(QDEC + 0x544)
+// Register accs the nmbr of detected dbl or illegal trans. ACCDBL[0..15]
 
 /* Snapshot of the ACCDBL, updated by the READCLRACC task */
 #define ACCDBLREADQDEC  MMIO32(QDEC + 0x548)
-
+// Snapshot of the ACCDBL register. ACCDBLREAD[0..15]
 
 #endif
