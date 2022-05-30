@@ -20,9 +20,17 @@
  */
 #include "memorymap.h"
 
-/* */
-#define STARTECB   MMIO32(ECB + 0x000)
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(ECB + 0x000)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(ECB + 0x100)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(ECB + 0x200)
 
 
 #endif

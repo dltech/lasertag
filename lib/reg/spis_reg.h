@@ -23,6 +23,16 @@
 /* */
 #define ACQUIRE   MMIO32(SPIS + 0x000)
 
+/*************Tasks************************/
+/*  */
+#define STARTRTC   MMIO32(SPIS + 0x000)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(SPIS + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(SPIS + 0x)
 
 #endif

@@ -23,6 +23,17 @@
 /* */
 #define PERR0   MMIO32(MPU + 0x528)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(MPU + 0x000)
+
+/************Events************************/
+/*  */
+#define READY   MMIO32(MPU + 0x100)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(MPU + 0x200)
 
 
 #endif

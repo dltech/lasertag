@@ -23,6 +23,17 @@
 /* */
 #define CONSTLAT   MMIO32(POWER + 0x078)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(POWER + 0x)
+
+/************Events************************/
+/*  */
+#define READY   MMIO32(POWER + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(POWER + 0x)
 
 
 #endif

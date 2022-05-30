@@ -20,9 +20,17 @@
  */
 #include "memorymap.h"
 
-/* */
+/*************Tasks************************/
+/*  */
 #define STARTTEMP   MMIO32(TEMP + 0x000)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(TEMP + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(TEMP + 0x)
 
 
 #endif

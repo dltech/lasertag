@@ -24,6 +24,20 @@
 #define STARTRX0   MMIO32(TWI0 + 0x000)
 #define STARTRX1   MMIO32(TWI1 + 0x000)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(TWI0 + 0x)
+#define START   MMIO32(TWI1 + 0x)
+
+/************Events************************/
+/*  */
+#define READY   MMIO32(TWI0 + 0x)
+#define READY   MMIO32(TWI1 + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(TWI0 + 0x)
+#define SHORTS        MMIO32(TWI1 + 0x)
 
 
 #endif

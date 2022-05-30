@@ -23,6 +23,16 @@
 /* */
 #define READYNVMC   MMIO32(NVMC + 0x400)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(NVMC + 0x)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(NVMC + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(NVMC + 0x)
 
 #endif

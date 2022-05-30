@@ -23,6 +23,17 @@
 /* */
 #define CHG0EN   MMIO32(PPI + 0x000)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(PPI + 0x)
+
+/************Events************************/
+/*  */
+#define READY   MMIO32(PPI + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(PPI + 0x)
 
 
 #endif

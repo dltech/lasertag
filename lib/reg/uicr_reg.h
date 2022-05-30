@@ -23,6 +23,16 @@
 /* */
 #define CLENR0   MMIO32(UICR + 0x000)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(UICR + 0x)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(UICR + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(UICR + 0x)
 
 #endif

@@ -23,6 +23,16 @@
 /* */
 #define STARTRX   MMIO32(UART + 0x000)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(UART + 0x)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(UART + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(UART + 0x)
 
 #endif

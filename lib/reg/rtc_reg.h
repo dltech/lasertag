@@ -20,9 +20,17 @@
  */
 #include "memorymap.h"
 
-/* */
+
+/*************Tasks************************/
+/*  */
 #define STARTRTC   MMIO32(RTC + 0x000)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(RTC + 0x)
 
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(RTC + 0x)
 
 #endif

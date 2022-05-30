@@ -40,7 +40,7 @@
 
 /************Registers*********************/
 /* Shortcut register */
-#define SHORTS        MMIO32(LPCOMP + 0x200)
+#define SHORTSCOMP        MMIO32(LPCOMP + 0x200)
 // Shortcut between READY event and SAMPLE task
 #define READY_SAMPLE    0x10
 // Shortcut between READY event and STOP task
@@ -53,7 +53,7 @@
 #define CROSS_STOP      0x01
 
 /* Enable or disable interrupt */
-#define INTEN         MMIO32(LPCOMP + 0x300)
+#define INTENCOMP         MMIO32(LPCOMP + 0x300)
 // Enable or disable interrupt on READY event
 #define READYIT 0x8
 // Enable or disable interrupt on DOWN event
@@ -64,21 +64,21 @@
 #define CROSSIT 0x1
 
 /* Enable interrupt */
-#define INTENSET      MMIO32(LPCOMP + 0x304)
+#define INTENSETCOMP      MMIO32(LPCOMP + 0x304)
 // Write '1' to Enable interrupt on READY event.
 // Write '1' to Enable interrupt on DOWN event.
 // Write '1' to Enable interrupt on UP event.
 // Write '1' to Enable interrupt on CROSS event.
 
 /* Disable interrupt */
-#define INTENCLR      MMIO32(LPCOMP + 0x308)
+#define INTENCLRCOMP      MMIO32(LPCOMP + 0x308)
 // Write '1' to Clear interrupt on READY event.
 // Write '1' to Clear interrupt on DOWN event.
 // Write '1' to Clear interrupt on UP event.
 // Write '1' to Clear interrupt on CROSS event.
 
 /* Compare result */
-#define RESULT        MMIO32(LPCOMP + 0x400)
+#define RESULTCOMP        MMIO32(LPCOMP + 0x400)
 // Result of last compare. Decision point SAMPLE task.
 #define RESULTFL    0x1
 
@@ -88,7 +88,7 @@
 #define ENABLEFL    0x1
 
 /* Input pin select */
-#define PSEL          MMIO32(LPCOMP + 0x504)
+#define PSELCOMP          MMIO32(LPCOMP + 0x504)
 // Analog pin select
 #define PSEL_AnalogInput0   0x0
 #define PSEL_AnalogInput1   0x1
@@ -100,7 +100,7 @@
 #define PSEL_AnalogInput7   0x7
 
 /* Reference select */
-#define REFSEL        MMIO32(LPCOMP + 0x508)
+#define REFSELCOMP        MMIO32(LPCOMP + 0x508)
 // Reference select
 #define REFSEL_1_8VDD   0x0
 #define REFSEL_2_8VDD   0x1
@@ -112,13 +112,13 @@
 #define REFSEL_AREF     0x7
 
 /* External reference select */
-#define EXTREFSEL     MMIO32(LPCOMP + 0x50c)
+#define EXTREFSELCOMP     MMIO32(LPCOMP + 0x50c)
 // External analog reference select
 #define EXTREFSEL_AnalogReference0  0x0
 #define EXTREFSEL_AnalogReference1  0x1
 
 /* Analog detect configuration */
-#define ANADETECT     MMIO32(LPCOMP + 0x520)
+#define ANADETECTCOMP     MMIO32(LPCOMP + 0x520)
 // Analog detect configuration
 #define ANADETECT_CROSS 0x0
 #define ANADETECT_UP    0x1

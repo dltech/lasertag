@@ -24,6 +24,20 @@
 #define READY0   MMIO32(SPI0 + 0x108)
 #define READY1   MMIO32(SPI1 + 0x108)
 
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(SPI0 + 0x)
+#define START   MMIO32(SPI1 + 0x)
+
+/************Events************************/
+/*  */
+#define READY   MMIO32(SPI0 + 0x)
+#define READY   MMIO32(SPI1 + 0x)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(SPI0 + 0x)
+#define SHORTS        MMIO32(SPI1 + 0x)
 
 
 #endif

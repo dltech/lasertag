@@ -20,9 +20,17 @@
  */
 #include "memorymap.h"
 
-/* */
-#define OUTGPIO   MMIO32(GPIO + 0x000)
+/*************Tasks************************/
+/*  */
+#define START   MMIO32(GPIO + 0x000)
 
+/************Events************************/
+/*  */
+#define READY   MMIO32(GPIO + 0x100)
+
+/************Registers*********************/
+/*  */
+#define SHORTS        MMIO32(GPIO + 0x200)
 
 
 #endif
