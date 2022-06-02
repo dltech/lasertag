@@ -34,14 +34,14 @@
 #define TIMER0  0x40008000
 #define TIMER1  0x40009000
 #define TIMER2  0x4000a000
-#define RTC     0x4000b000
+#define RTC0    0x4000b000
 #define TEMP    0x4000c000
 #define RNG     0x4000d000
 #define ECB     0x4000e000
 #define AAR     0x4000f000
 #define CCM     0x4000f000
 #define WDT     0x40010000
-#define RTC     0x40011000
+#define RTC1    0x40011000
 #define QDEC    0x40012000
 #define LPCOMP  0x40013000
 #define SWI0    0x40014000
