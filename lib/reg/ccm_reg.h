@@ -88,4 +88,15 @@
 #define SCRATCHPTRCCM   MMIO32(CCM + 0x514)
 // Pointer to a "scratch" data area used for temp storage during keystream gener
 
+// CCM data structure overview
+#define KEY_CCM_PTR     0
+#define PKTCTR_CCM_PTR  16
+#define IV_CCM_PTR      25
+
+// Data structure for unencrypted/encrypted packet
+#define HEADER_CCM_PTR  0
+#define LENGTH_CCM_PTR  1
+#define RFU_CCM_PTR     2
+#define PAYLOAD_CCM_PTR 3
+
 #endif

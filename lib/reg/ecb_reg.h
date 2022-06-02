@@ -21,16 +21,37 @@
 #include "memorymap.h"
 
 /*************Tasks************************/
-/*  */
-#define START   MMIO32(ECB + 0x000)
+/* Start ECB block encrypt */
+#define STARTECB    MMIO32(ECB + 0x000)
+/* Abort a possible executing ECB operation */
+#define STOPECB     MMIO32(ECB + 0x004)
 
 /************Events************************/
-/*  */
-#define READY   MMIO32(ECB + 0x100)
+/* ECB block encrypt complete */
+#define ENDECB      MMIO32(ECB + 0x100)
+/* ECB block encrypt aborted because of a STOPECB task or due to an error */
+#define ERRORECB    MMIO32(ECB + 0x104)
 
 /************Registers*********************/
-/*  */
-#define SHORTS        MMIO32(ECB + 0x200)
+/* Enable interrupt */
+#define INTENSETECB MMIO32(ECB + 0x304)
+// Write '1' to Enable interrupt on ENDECB event.
+#define ENDECB      0x1
+// Write '1' to Enable interrupt on ERRORECB event.
+#define ERRORECB    0x2
 
+/* Disable interrupt */
+#define INTENCLRECB MMIO32(ECB + 0x308)
+// Write '1' to Clear interrupt on ENDECB event.
+// Write '1' to Clear interrupt on ERRORECB event.
+
+/* ECB block encrypt memory pointers */
+#define ECBDATAPTR  MMIO32(ECB + 0x504)
+// Pointer to the ECB data structure (see Table 1 ECB data structure overview)
+
+// ECB data structure overview
+#define KEY_ECB_PTR         0
+#define CLEARTEXT_ECB_PTR   16
+#define CIPHERTEXT_ECB_PTR  32
 
 #endif
