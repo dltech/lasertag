@@ -21,16 +21,57 @@
 #include "memorymap.h"
 
 /*************Tasks************************/
-/*  */
-#define START   MMIO32(AAR + 0x000)
-
+/* Start resolving addresses based on IRKs specified in the IRK data structure */
+#define STARTAAR        MMIO32(AAR + 0x000)
+/* Stop resolving addresses */
+#define STOPAAR         MMIO32(AAR + 0x000)
 
 /************Events************************/
-/*  */
-#define READY   MMIO32(AAR + 0x100)
-
+/* Address resolution procedure complete */
+#define ENDAAR          MMIO32(AAR + 0x100)
+/* Address resolved */
+#define RESOLVEDAAR     MMIO32(AAR + 0x100)
+/* Address not resolved */
+#define NOTRESOLVEDAAR  MMIO32(AAR + 0x100)
 /************Registers*********************/
-/*  */
-#define SHORTS        MMIO32(AAR + 0x200)
+/* Enable interrupt */
+#define INTENSETAAR     MMIO32(AAR + 0x200)
+// Write '1' to Enable interrupt on END event.
+#define ENDA            0x1
+// Write '1' to Enable interrupt on RESOLVED event.
+#define RESOLVEDA       0x2
+// Write '1' to Enable interrupt on NOTRESOLVED event.
+#define NOTRESOLVEDA    0x4
+
+/* Disable interrupt */
+#define INTENCLRAAR     MMIO32(AAR + 0x200)
+// Write '1' to Clear interrupt on END event.
+// Write '1' to Clear interrupt on RESOLVED event.
+// Write '1' to Clear interrupt on NOTRESOLVED event.
+
+/* Resolution status */
+#define STATUSAAR       MMIO32(AAR + 0x200)
+// The IRK that was used last time an address was resolved. STATUS[3:0]
+
+/* Enable AAR */
+#define ENABLEAAR       MMIO32(AAR + 0x200)
+// Enable or disable AAR.
+#define ENABLEA 0x3
+
+/* Number of IRKs */
+#define NIRKAAR         MMIO32(AAR + 0x200)
+// Number of Identity root keys available in the IRK data structure. NIRK[31:0]
+
+/* Pointer to IRK data structure */
+#define IRKPTRAAR       MMIO32(AAR + 0x200)
+// Pointer to the IRK data structure. IRKPTR[31:0]
+
+/* Pointer to the resolvable address */
+#define ADDRPTRAAR      MMIO32(AAR + 0x200)
+// Pointer to the resolvable address (6-bytes). ADDRPTR[31:0]
+
+/* Pointer to data area used for temporary storage */
+#define SCRATCHPTRAAR   MMIO32(AAR + 0x200)
+// Ptr to a "scratch" data area used for temporary storage during resolution.
 
 #endif
