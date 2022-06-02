@@ -20,19 +20,42 @@
  */
 #include "memorymap.h"
 
-/* */
-#define STARTRNG   MMIO32(RNG + 0x000)
-
 /*************Tasks************************/
-/*  */
-#define START   MMIO32(RNG + 0x)
+/* Task starting the random number generator */
+#define STARTRNG    MMIO32(RNG + 0x000)
+/* Task stopping the random number generator */
+#define STOPRNG     MMIO32(RNG + 0x004)
 
 /************Events************************/
-/*  */
-#define READY   MMIO32(RNG + 0x)
+/* Event being generated for every new rnd number written to the VALUE reg */
+#define VALRDYRNG   MMIO32(RNG + 0x100)
 
 /************Registers*********************/
-/*  */
-#define SHORTS        MMIO32(RNG + 0x)
+/* Shortcut register */
+#define SHORTSRNG   MMIO32(RNG + 0x200)
+// Shortcut between VALRDY event and STOP task
+#define VALRDY_STOPR    0x1
+
+/* Enable or disable interrupt */
+#define INTENRNG    MMIO32(RNG + 0x300)
+// Enable or disable interrupt on VALRDY event
+#define VALRDYR 0x1
+
+/* Enable interrupt */
+#define INTENSETRNG MMIO32(RNG + 0x304)
+// Write '1' to Enable interrupt on VALRDY event.
+
+/* Disable interrupt */
+#define INTENCLRRNG MMIO32(RNG + 0x308)
+// Write '1' to Clear interrupt on VALRDY event.
+
+/* Configuration register */
+#define CONFIGRNG   MMIO32(RNG + 0x504)
+// Digital error correction
+#define DERCENR  0x1
+
+/* Output random number */
+#define VALUERNG    MMIO32(RNG + 0x508)
+// Generated random number. VALUE[7:0]
 
 #endif
