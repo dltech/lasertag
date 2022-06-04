@@ -20,19 +20,39 @@
  */
 #include "memorymap.h"
 
-/* */
-#define READYNVMC   MMIO32(NVMC + 0x400)
-
-/*************Tasks************************/
-/*  */
-#define START   MMIO32(NVMC + 0x)
-
-/************Events************************/
-/*  */
-#define READY   MMIO32(NVMC + 0x)
-
 /************Registers*********************/
-/*  */
-#define SHORTS        MMIO32(NVMC + 0x)
+/* Ready flag */
+#define READYNVMC       MMIO32(NVMC + 0x400)
+// NVMC is ready or busy
+#define READYN  0x1
+
+/* Configuration register */
+#define CONFIGNVMC      MMIO32(NVMC + 0x504)
+// Program memory access mode.
+#define WEN_REN 0x0
+#define WEN_WEN 0x1
+#define WEN_EEN 0x2
+
+/* Register for erasing a page in Code area */
+#define ERASEPAGENVMC   MMIO32(NVMC + 0x508)
+// Register for starting erase of a page in Code region 1. ERASEPAGE[31:0]
+
+/* Register for erasing a page in Code region 1. Equivalent to ERASEPAGE. */
+#define ERASEPCR1NVMC   MMIO32(NVMC + 0x508)
+// Register for erasing a page in Code region 1. Equivalent to ERASEPAGE.
+
+/* Register for erasing all non-volatile user memory */
+#define ERASEALLNVMC    MMIO32(NVMC + 0x50c)
+// Erase all non-volatile memory including UICR registers.
+#define ERASEALL   0x1
+
+/* Register for erasing a page in Code region 0 */
+#define ERASEPCR0NVMC   MMIO32(NVMC + 0x510)
+// Register for starting erase of a page in Code region 0. ERASEPCR0[31:0]
+
+/* Register for erasing User Information Configuration Registers */
+#define ERASEUICRNVMC   MMIO32(NVMC + 0x514)
+// Register starting erase of all User Information Configuration Registers
+#define ERASEUICR   0x1
 
 #endif
